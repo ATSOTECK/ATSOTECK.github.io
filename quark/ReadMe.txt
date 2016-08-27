@@ -1,4 +1,4 @@
-Distribution date 14 - December - 2015
+Distribution date 27 - August - 2016
 
 --------------------------------------------------------------------------------
 WARNING: VERY BROKEN PRE-ALPHA USE AT YOUR OWN RISK
@@ -268,6 +268,12 @@ setScrollSpeed(number speed) Sets the speed at which things scroll. The default 
 
 setWindowOpacity(number opacity) Min 0, max 255. This controls how opaque, or transparent, the window is. Default value is 255.
 setFrameRateLimit(number fps)
+
+setStartingWindowSize(number width, number height) Sets the size of the window at start. If either width or height are
+    0 then they will be set to the default: width = 1024 and height = 600 and it will be maximized.
+
+setStartMaximized(bool startMaximized) If true it will ignoret the starting size and maximize. If the window is restored down
+    it will be set to the starting size.
 
 --Theme related
 For all r, g, and b: min 0, max 255
