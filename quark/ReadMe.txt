@@ -1,4 +1,4 @@
-Distribution date 27 - August - 2016
+Distribution date 28 - August - 2016
 
 --------------------------------------------------------------------------------
 WARNING: VERY BROKEN PRE-ALPHA USE AT YOUR OWN RISK
@@ -61,6 +61,10 @@ It is recommended that you only use theme related functions though.
 If there is an update function in the theme file it will not be called every update, unlike the main config file.
 
 Built in globals:
+
+--Modality
+mode_edit
+mode_command
 
 --Keyboard
 vk_a
@@ -217,6 +221,11 @@ cursor_outline
 cursor_underscore
 cursor_line
 
+--Line Highlight
+highlight_line_number_area
+highlight_code_area
+highlight_both
+
 --Misc
 globalsCount   --The number of registered globals
 functionsCount --The number of registered functions
@@ -261,6 +270,9 @@ setCursorType(number type) Valid types: cursor_line, cursor_block, cursor_outlin
 setBlinkCursor(bool blink) Whether or not the cursor blinks.
 
 setShowMark(bool show) Whether or not the mark is show. It is still used if set to false, just not drawn.
+setShowFrame(bool show) Whether or not the frame around the code editor is shown. Defaults to true.
+setShowLineHighlight(bool show) Whether or not the current line is highlighted.
+setLineHighlightType(number type) Valid types highlight_line_number_area, highligh_code_area, highlight_both. Defaults to highlight_both on invalid option.
 
 setUseMouseClick(bool use) Whether or not clicking the mouse button moves the cursor. Default is true.
 
@@ -271,6 +283,8 @@ setFrameRateLimit(number fps)
 
 setStartingWindowSize(number width, number height) Sets the size of the window at start. If either width or height are
     0 then they will be set to the default: width = 1024 and height = 600 and it will be maximized.
+    Note that currently the window will NOT resize if you change this and reload. You will have to restart. The reason this was disabled is it was
+    causing issues with reloading the preferences. When this issue is fixed the window will be able to resize on reload.
 
 setStartMaximized(bool startMaximized) If true it will ignoret the starting size and maximize. If the window is restored down
     it will be set to the starting size.
@@ -288,6 +302,8 @@ setMarkColor(number r, number g, number b)
 setCurrentCharColor(number r, number g, number b)
 setLineNumberAreaColor(number r, number g, number b)
 setLineNumberTextColor(number r, number g, number b)
+setLineHighlightColor(number r, number g, number b)
+setLineHighlightTextColor(number r, number g, number b)
 
 --------------------------------------------------------------------------------
 Binding
